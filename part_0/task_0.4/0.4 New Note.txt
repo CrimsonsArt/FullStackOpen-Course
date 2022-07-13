@@ -1,0 +1,42 @@
+title 0.4: New Note
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over Browser
+Browser sends the form data to the Server.
+end note
+
+note over Browser
+Browser reloads and uses HTML GET to load the HTML-document.
+end note
+Browser->Server: HTTP GET studies.cs.helsinki.fi/exampleapp/notes
+
+
+Server-->Browser: HTML-code
+Browser->Server: HTTP GET studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP GET studies.cs.helsinki.fi/exampleapp/main.js
+note over Browser
+Browser uses HTML GET to load the CSS-stylesheet and JavaScript-document.
+end note
+
+Server-->Browser: main.js
+note over Browser
+Browser starts executing main.js, requesting a data.json file.
+end note
+
+Browser->Server: HTTP GET studies.cs.helsinki.fi/exampleapp/data.json
+note over Browser
+Browser uses HTML GET to access the data.json file.
+end note
+
+Server-->Browser: data.json { content: "HelloWorld", date: "2022-07-13T14:00:09.798Z" }
+note over Server
+Server responds with the updated data.json.
+end note
+
+Browser->Server: HTTP GET studies.cs.helsinki.fi/exampleapp/favicon.ico
+Server-->Browser: favicon.ico
+note over Browser
+Browser requests and recieves the
+favicon.ico file displayed in browser tabs.
+end note
+

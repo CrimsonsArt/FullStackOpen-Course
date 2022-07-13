@@ -1,0 +1,34 @@
+title 0.5: Single page app
+note over Browser
+Browser requests the HTML-document
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server-->Browser: HTML-document
+note over Browser
+HTML-document links to a CSS-document, causing
+the Browser to send a request for main.css
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Server-->Browser: CSS-document
+note over Browser
+HTML-document links to a JavaScript-document,
+causing the Browser to send a request for main.js
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Server-->Browser: JavaScript-document
+note over Browser
+Browser executes the JavaScript, causing
+it to request the data.json file.
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server-->Browser: JSON-file
+note over Browser
+Brower recives the JSON-file and renders its contents.
+end note
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+Server-->Browser: favicon-file

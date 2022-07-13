@@ -1,0 +1,8 @@
+title 0.6: New note
+Browser->Server: HTML POST studies.cs.helsinki.fi/exampleapp/new_note_spa
+Server-->Browser: Response: 'message: "note created"'
+note over Browser, Server
+Being a single-page application, only one event happens in the network-tab.
+The Browser sends the new data to the server, while JavaScript adds the note
+without the need for reloading the page.
+end note
